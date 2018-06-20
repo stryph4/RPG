@@ -1,0 +1,22 @@
+﻿<Window x:Class="RPG.CreateNewCharacter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG"
+        mc:Ignorable="d"
+        Title="CreateNewCharacter" Height="300" Width="350" Background="#FFD4D2D2">
+    <Grid Background="White">
+        <Label x:Name="NewCharacterLabel" Content="Enter a name and choose a class for your hero:" HorizontalAlignment="Center" Margin="0,0,0,200" VerticalAlignment="Center" FontFamily="Calibri" FontSize="14"/>
+        <TextBox x:Name="NameCharacter" HorizontalAlignment="Center" Height="21" Margin="0,0,0,100" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Calibri"/>
+        <Button x:Name="Okay_Button" Content="Create" HorizontalAlignment="Center" Margin="0,0,0,15" VerticalAlignment="Bottom" Width="75" FontFamily="Calibri" Click="Okay_Button_Click"/>
+        <Grid HorizontalAlignment="Center" Height="100" Margin="0,50,0,0" VerticalAlignment="Center" Width="100">
+            <RadioButton x:Name="paladinButton" GroupName="ClassChoice" Content="Paladin" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="paladinButton_Checked"/>
+            <RadioButton x:Name="mageButton" GroupName="ClassChoice" Content="Mage" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="mageButton_Checked"/>
+            <RadioButton x:Name="thiefButton" GroupName="ClassChoice" Content="Thief" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="thiefButton_Checked"/>
+            <RadioButton x:Name="warriorButton" GroupName="ClassChoice" Content="Warrior" HorizontalAlignment="Left" Margin="0,0,0,81" VerticalAlignment="Bottom" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="warriorButton_Checked"/>
+        </Grid>
+
+
+    </Grid>
+</Window>
