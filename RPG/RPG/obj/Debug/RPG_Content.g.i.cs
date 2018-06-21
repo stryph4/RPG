@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sprites/paladin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/zones/backgrounds/forest.png")]
 
 

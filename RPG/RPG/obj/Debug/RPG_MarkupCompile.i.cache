@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\obj\Debug\
 RPG
 none
 false
 DEBUG;TRACE
-C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\App.xaml
-5394137096
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\App.xaml
+6-474056510
 
-35-944036944
+36908693966
 131569487696
-Windows\CharacterMenu.xaml;Windows\CreateNewCharacter.xaml;Windows\ExploreWindow.xaml;Windows\MainWindow.xaml;Windows\QuitWindow.xaml;
+Windows\CharacterMenu.xaml;Windows\CreateNewCharacter.xaml;Windows\ExploreWindow.xaml;Windows\Zones\ForestExplore.xaml;Windows\MainWindow.xaml;Windows\QuitWindow.xaml;
 
 False
 

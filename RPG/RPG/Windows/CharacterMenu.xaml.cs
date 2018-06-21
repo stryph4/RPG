@@ -56,6 +56,9 @@ namespace RPG.Windows
             magicDefenseLabel.Content = $"MDef: {hero.MagicDefense}";
             critLabel.Content = $"Crit %: {hero.CriticalHitRate}";
             dodgeLabel.Content = $"Dodge %: {hero.DodgeRate}";
+            goldLabel.Content = $"Gold: {hero.Gold}";
+            skillPtsLabel.Content = $"Skill Pts: {hero.SkillPoints}";
+
             if (HP_Bar.Value < hero.HP / 4)
             {
                 HP_Bar.Foreground = Brushes.Red;

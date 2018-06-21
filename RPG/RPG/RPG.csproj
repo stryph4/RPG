@@ -84,6 +84,9 @@
     <Compile Include="Windows\ExploreWindow.xaml.cs">
       <DependentUpon>ExploreWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Zones\ForestExplore.xaml.cs">
+      <DependentUpon>ForestExplore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\QuitWindow.xaml.cs">
       <DependentUpon>QuitWindow.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ExploreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Zones\ForestExplore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Sprites\Paladin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Zones\Backgrounds\forest.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

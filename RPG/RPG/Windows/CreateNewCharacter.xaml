@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
-        Title="CreateNewCharacter" Height="323.866" Width="515.294" Background="#FFD4D2D2">
+        Title="Create Your Hero" Height="323.866" Width="515.294" Background="#FFD4D2D2">
     <Grid Background="Gray">
         <Label x:Name="NewCharacterLabel" Content="Enter a name and choose a class for your hero:" HorizontalAlignment="Center" Margin="106,38,118,227" VerticalAlignment="Center" FontFamily="Calibri" FontSize="14" Width="283" Height="28"/>
         <TextBox x:Name="NameCharacter" HorizontalAlignment="Center" Height="23" Margin="168,79,182,191" TextWrapping="Wrap" VerticalAlignment="Center" Width="157" FontFamily="Calibri"/>

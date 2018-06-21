@@ -42,3 +42,7 @@ C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\RPG.exe
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\RPG.pdb
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\ExploreWindow.g.cs
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\ExploreWindow.baml
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\obj\Debug\Windows\ExploreWindow.g.cs
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\obj\Debug\Windows\ExploreWindow.baml
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\obj\Debug\Windows\Zones\ForestExplore.g.cs
+C:\Users\Nabiel El-Gendy\source\repos\RPG\RPG\obj\Debug\Windows\Zones\ForestExplore.baml

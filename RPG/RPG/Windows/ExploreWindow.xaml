@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG.Windows"
         mc:Ignorable="d"
-        Title="ExploreWindow" Height="350" Width="500">
+        Title="Explore" Height="350" Width="500">
     <Grid Background="Gray">
-        
+        <Label x:Name="Zone_Label" Content="Choose a zone to travel to:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="158,121,122.333,163.667" Width="213" FontFamily="Calibri" FontSize="16" FontStretch="Condensed" Height="36">
+        </Label>
+
     </Grid>
 </Window>

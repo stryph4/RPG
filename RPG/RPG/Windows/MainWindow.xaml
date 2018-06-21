@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="White">
+        Title="Game" Height="450" Width="800" Background="White">
     <Grid Background="Gray">
         <Button x:Name="New_Game" Content="New Game" HorizontalAlignment="Left" Margin="150,0,0,50" VerticalAlignment="Bottom" Width="100" RenderTransformOrigin="-1.079,-1.964" Height="50" Background="#FFCABCBC" FontFamily="Calibri" FontSize="18" Click="New_Game_Click"/>
         <Button x:Name="Load_Game" Content="Load Game" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Width="100" RenderTransformOrigin="-1.079,-1.964" Height="50" Background="#FFCABCBC" FontFamily="Calibri" FontSize="18"/>

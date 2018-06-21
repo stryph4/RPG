@@ -22,7 +22,7 @@ namespace Game.Classes
                 {
 
                     Console.WriteLine($"Level: {hero.Level} Experience: {hero.Experience} / {hero.ExperienceToLevel}");
-                    Console.WriteLine($"Gold: {hero.Gold} Stat Points: {hero.StatPoints}");
+                    Console.WriteLine($"Gold: {hero.Gold} Stat Points: {hero.SkillPoints}");
                     Console.WriteLine("---------------------------------------------------------");
                     Console.WriteLine("> What would you like to do?");
                     Console.WriteLine("> 1. Check Inventory");
@@ -109,7 +109,7 @@ namespace Game.Classes
 
         private static void IncreaseStats(Combatant hero)
         {
-            CharacterMethods.SpendStatPoints(hero);
+            CharacterMethods.SpendSkillPoints(hero);
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
             return;

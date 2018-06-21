@@ -60,7 +60,7 @@ namespace Game.Classes
                     hero.Experience = int.Parse(lvlGold[0]);
                     hero.ExperienceToLevel = int.Parse(lvlGold[1]);
                     hero.Gold = int.Parse(lvlGold[2]);
-                    hero.StatPoints = int.Parse(lvlGold[3]);
+                    hero.SkillPoints = int.Parse(lvlGold[3]);
 
                     List<string> inventory = new List<string>(sr.ReadLine().Split('|'));
                     inventory.RemoveAt(inventory.Count - 1);

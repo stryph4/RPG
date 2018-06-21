@@ -137,7 +137,7 @@ namespace Game.Classes
         /// </summary>
         public double BaseDodge { get; set; }
 
-        public int StatPoints { get; set; }
+        public int SkillPoints { get; set; }
 
         public Dictionary<string, int> Inventory { get; set; }
 
@@ -155,7 +155,7 @@ namespace Game.Classes
             Inventory = new Dictionary<string, int>();
             Skills = new Dictionary<string, string>();
             Gold = 25;
-            StatPoints = 0;
+            SkillPoints = 0;
 
         }
 

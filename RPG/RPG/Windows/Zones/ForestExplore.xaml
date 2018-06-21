@@ -1,0 +1,24 @@
+﻿<Window x:Class="RPG.Windows.ForestExplore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG.Windows"
+        mc:Ignorable="d"
+        Title="Forest" Height="450" Width="800">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="396*"/>
+            <ColumnDefinition Width="397*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Background" HorizontalAlignment="Left" Height="269" VerticalAlignment="Top" Width="783" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="Backgrounds/forest.png"/>
+            </Grid.Background>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="74" Margin="217,269,215.333,0" VerticalAlignment="Top" Width="361" Grid.ColumnSpan="2">
+            <Button x:Name="ExploreButton" Content="Explore&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" Width="85" Height="54" IsCancel="True" FontFamily="Calibri" FontSize="16" FontWeight="Bold"/>
+            <Button x:Name="LeaveButton" Content="Leave&#xA;" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Width="85" Height="54" Cursor="Hand" FontFamily="Calibri" FontSize="16" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Window>

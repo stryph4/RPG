@@ -56,7 +56,7 @@ namespace Game.Classes
                 Console.WriteLine($"Congratulations! You have advanced to level {hero.Level}!");
                 Console.WriteLine($"Your maximum HP has increased to {hero.MaxHP} and your maximum resource has increased to {hero.MaxMP}");
                 Console.WriteLine("You've earned 2 stat points!");
-                hero.StatPoints += 2;
+                hero.SkillPoints += 2;
                 hero.HP = hero.MaxHP;
                 hero.MP = hero.MaxMP;
                 hero.Experience -= hero.ExperienceToLevel;
@@ -67,11 +67,11 @@ namespace Game.Classes
             }
         }
 
-        public static void SpendStatPoints(Combatant hero)
+        public static void SpendSkillPoints(Combatant hero)
         {
             string[] validInputs = new string[4] { "S", "A", "I", "Q" };
             string input = "";
-            if (hero.StatPoints > 0)
+            if (hero.SkillPoints > 0)
             {
 
                 while (!(validInputs.Contains(input)))
@@ -96,7 +96,7 @@ namespace Game.Classes
 
             if (input == "S")
             {
-                hero.StatPoints--;
+                hero.SkillPoints--;
                 hero.Strength++;
                 Console.WriteLine("Your strength has been increased by 1 point.");
                 UpdateStats(hero);
@@ -104,14 +104,14 @@ namespace Game.Classes
             }
             if (input == "A")
             {
-                hero.StatPoints--;
+                hero.SkillPoints--;
                 hero.Agility++;
                 Console.WriteLine("Your agility has been increased by 1 point.");
                 UpdateStats(hero);
             }
             if (input == "I")
             {
-                hero.StatPoints--;
+                hero.SkillPoints--;
                 hero.Intelligence++;
                 Console.WriteLine("Your intelligence has been increased by 1 point.");
                 UpdateStats(hero);
