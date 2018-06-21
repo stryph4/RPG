@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Game.Classes;
 using RPG.Windows;
+using System.Windows.Media.Imaging;
 
 namespace RPG
 {
@@ -21,12 +22,12 @@ namespace RPG
     /// </summary>
     public partial class CreateNewCharacter : Window
     {
+
         public CreateNewCharacter()
         {
 
             InitializeComponent();
             WindowPositioner.CenterWindowOnScreen(this);
-
         }
 
         private void Okay_Button_Click(object sender, RoutedEventArgs e)
@@ -68,6 +69,11 @@ namespace RPG
             CharacterMethods.ThiefSelected = false;
             CharacterMethods.MageSelected = false;
             CharacterMethods.PaladinSelected = false;
+        }
+
+        private void Enter(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
         Title="QuitWindow" Height="200" Width="400">
-    <Grid Background="#FFD4D2D2">
+    <Grid Background="Gray">
         <Label x:Name="QuitConfirmation" Content="Are you sure you want to quit?" HorizontalAlignment="Center" Margin="0,0,0,105" VerticalAlignment="Center" FontFamily="Calibri" FontSize="18"/>
         <Button x:Name="YesQuit" Content="Yes" HorizontalAlignment="Left" Margin="75,0,0,50" VerticalAlignment="Bottom" Width="75" FontFamily="Calibri" FontSize="18" Click="YesQuit_Click"/>
         <Button x:Name="NoQuit" Content="No" HorizontalAlignment="Right" Margin="0,0,75,50" VerticalAlignment="Bottom" Width="75" FontFamily="Calibri" FontSize="18" Click="NoQuit_Click"/>

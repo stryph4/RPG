@@ -6,10 +6,16 @@
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="White">
-    <Grid Background="#FFD4D2D2">
+    <Grid Background="Gray">
         <Button x:Name="New_Game" Content="New Game" HorizontalAlignment="Left" Margin="150,0,0,50" VerticalAlignment="Bottom" Width="100" RenderTransformOrigin="-1.079,-1.964" Height="50" Background="#FFCABCBC" FontFamily="Calibri" FontSize="18" Click="New_Game_Click"/>
         <Button x:Name="Load_Game" Content="Load Game" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Width="100" RenderTransformOrigin="-1.079,-1.964" Height="50" Background="#FFCABCBC" FontFamily="Calibri" FontSize="18"/>
         <Button x:Name="Quit" Content="Quit" Margin="0,0,150,50" VerticalAlignment="Bottom" Width="100" RenderTransformOrigin="-1.079,-1.964" Height="50" Background="#FFCABCBC" FontFamily="Calibri" FontSize="18" Click="Quit_Click" HorizontalAlignment="Right"/>
+        <Grid HorizontalAlignment="Center" Height="150" Margin="0,50,0,150" VerticalAlignment="Center" Width="800">
+            <Image x:Name="Warrior" HorizontalAlignment="Center" Height="150" Margin="54,0,596,0" VerticalAlignment="Center" Width="150" Source="/RPG;component/Sprites/Warrior.png"/>
+            <Image x:Name="Thief" HorizontalAlignment="Center" Height="150" Margin="245,0,405,0" VerticalAlignment="Center" Width="150" Source="/RPG;component/Sprites/Thief.png"/>
+            <Image x:Name="Mage" HorizontalAlignment="Center" Height="150" Margin="437,0,213,0" VerticalAlignment="Center" Width="150" Source="/RPG;component/Sprites/Mage.png"/>
+            <Image x:Name="Paladin" HorizontalAlignment="Center" Height="150" Margin="587,0,63,0" VerticalAlignment="Center" Width="150" Source="/RPG;component/Sprites/Paladin.png"/>
+        </Grid>
 
     </Grid>
 </Window>

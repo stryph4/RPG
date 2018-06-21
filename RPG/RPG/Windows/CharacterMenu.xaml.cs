@@ -23,9 +23,22 @@ namespace RPG.Windows
         public CharacterMenu(Combatant hero)
         {
             InitializeComponent();
+            HP_Bar.Maximum = hero.MaxHP;
+            MP_Bar.Maximum = hero.MaxMP;
+            HP_Bar.Minimum = 0;
+            MP_Bar.Minimum = 0;
+            HP_Bar.Value = hero.HP;
+            MP_Bar.Value = hero.MP;
+
             PrintHero(hero);
+            HeroImage(hero);
+            
         }
 
+        /// <summary>
+        /// Sets labels of hero stats in the main menu
+        /// </summary>
+        /// <param name="hero"></param>
         public void PrintHero(Combatant hero)
         {
             nameLabel.Content = $"{hero.Name}";
@@ -43,6 +56,30 @@ namespace RPG.Windows
             magicDefenseLabel.Content = $"MDef: {hero.MagicDefense}";
             critLabel.Content = $"Crit %: {hero.CriticalHitRate}";
             dodgeLabel.Content = $"Dodge %: {hero.DodgeRate}";
+            if (HP_Bar.Value < hero.HP / 4)
+            {
+                HP_Bar.Foreground = Brushes.Red;
+            }
+            if (HP_Bar.Value < hero.HP / 2)
+            {
+                HP_Bar.Foreground = Brushes.Yellow;
+            }
+        }
+
+        public void HeroImage(Combatant hero)
+        {
+                ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + hero.ClassType + ".png", UriKind.Relative));
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
