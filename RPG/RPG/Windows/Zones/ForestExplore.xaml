@@ -15,10 +15,11 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Backgrounds/forest.png"/>
             </Grid.Background>
+            <Image x:Name="ClassImage" HorizontalAlignment="Left" Height="155" Margin="92,114,0,0" VerticalAlignment="Top" Width="161" Source="/RPG;component/Sprites/Warrior.png" Stretch="Fill" />
         </Grid>
         <Grid HorizontalAlignment="Center" Height="74" Margin="217,269,215.333,0" VerticalAlignment="Top" Width="361" Grid.ColumnSpan="2">
-            <Button x:Name="ExploreButton" Content="Explore&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" Width="85" Height="54" IsCancel="True" FontFamily="Calibri" FontSize="16" FontWeight="Bold"/>
-            <Button x:Name="LeaveButton" Content="Leave&#xA;" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Width="85" Height="54" Cursor="Hand" FontFamily="Calibri" FontSize="16" FontWeight="Bold"/>
+            <Button x:Name="ExploreButton" Content="Explore&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" Width="85" Height="54" IsCancel="True" FontFamily="Calibri" FontSize="16" FontWeight="Bold" Click="Explore_Clicked"/>
+            <Button x:Name="LeaveButton" Content="Leave&#xA;" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Width="85" Height="54" Cursor="Hand" FontFamily="Calibri" FontSize="16" FontWeight="Bold" Click="Leave_Clicked"/>
         </Grid>
     </Grid>
 </Window>

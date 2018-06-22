@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,22 @@ namespace RPG.Windows
         public ForestExplore()
         {
             InitializeComponent();
+        }
+
+        private void Leave_Clicked(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Explore_Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void ShowHeroImage(Combatant hero)
+        {
+            ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + hero.ClassType + ".png", UriKind.Relative));
+
         }
     }
 }

@@ -75,31 +75,31 @@
     <Compile Include="Classes\Skills\Skills.cs" />
     <Compile Include="Classes\Skills\ThiefSkills.cs" />
     <Compile Include="Classes\Skills\WarriorSkills.cs" />
-    <Compile Include="Windows\CharacterMenu.xaml.cs">
+    <Compile Include="Windows\CharacterWindows\CharacterMenu.xaml.cs">
       <DependentUpon>CharacterMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CreateNewCharacter.xaml.cs">
+    <Compile Include="Windows\CharacterWindows\CreateNewCharacter.xaml.cs">
       <DependentUpon>CreateNewCharacter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ExploreWindow.xaml.cs">
+    <Compile Include="Windows\Zones\ExploreWindow.xaml.cs">
       <DependentUpon>ExploreWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Zones\ForestExplore.xaml.cs">
       <DependentUpon>ForestExplore.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\QuitWindow.xaml.cs">
+    <Compile Include="Windows\CharacterWindows\QuitWindow.xaml.cs">
       <DependentUpon>QuitWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowPositioner.cs" />
-    <Page Include="Windows\CharacterMenu.xaml">
+    <Page Include="Windows\CharacterWindows\CharacterMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CreateNewCharacter.xaml">
+    <Page Include="Windows\CharacterWindows\CreateNewCharacter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ExploreWindow.xaml">
+    <Page Include="Windows\Zones\ExploreWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,7 +119,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\QuitWindow.xaml">
+    <Page Include="Windows\CharacterWindows\QuitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,5 +165,6 @@
   <ItemGroup>
     <Resource Include="Windows\Zones\Backgrounds\forest.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

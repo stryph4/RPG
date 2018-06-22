@@ -1,0 +1,49 @@
+﻿<Window x:Name="Character_Menu" x:Class="RPG.Windows.CharacterMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG.Windows"
+        mc:Ignorable="d"
+        Title="Main Menu" Height="450" Width="800" FontFamily="Calibri" Background="White">
+    <Grid Background="Gray">
+        <Grid HorizontalAlignment="Left" Height="155" Margin="50,225,0,0" VerticalAlignment="Top" Width="213">
+            <Label x:Name="nameLabel" Content="Name&#xA;" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+            <Label x:Name="levelLabel" Content="Level&#xA;" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="classLabel" Content="Class&#xA;" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="experienceLabel" Content="Experience" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
+            <Grid HorizontalAlignment="Left" Height="145" Margin="91,0,0,0" VerticalAlignment="Top" Width="122">
+                <Label x:Name="healthLabel" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,10,0" VerticalAlignment="Top" Width="97" Height="25"/>
+                <Label x:Name="mpLabel" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,13,0" VerticalAlignment="Top" Width="97" Height="26"/>
+                <ProgressBar x:Name="HP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,10,0,0" VerticalAlignment="Top" Width="100" Foreground="Lime"/>
+                <ProgressBar x:Name="MP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,50,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF"/>
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="133" Margin="300,225,0,0" VerticalAlignment="Top" Width="289">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="103*"/>
+                <ColumnDefinition Width="111*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="strengthLabel" Content="Strength&#xA;" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="79" Height="39" Grid.ColumnSpan="2"/>
+            <Label x:Name="agilityLabel" Content="Agility&#xA;" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="79" Height="40" Grid.ColumnSpan="2"/>
+            <Label x:Name="defenseLabel" Content="Defense&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="5" Grid.Column="2" Margin="0,0,0.333,0" Width="79" Height="39"/>
+            <Label x:Name="intelligenceLabel" Content="Intelligence" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="115" Height="25" Grid.ColumnSpan="2"/>
+            <Label x:Name="atkpwrLabel" Content="atkPwr&#xA;" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="115" Height="40" Grid.ColumnSpan="2"/>
+            <Label x:Name="splpwrLabel" Content="splPwr&#xA;" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="115" Height="33" Grid.ColumnSpan="2"/>
+            <Label x:Name="magicDefenseLabel" Content="MagicDefense&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,25,0.333,0" Grid.Column="2" Width="79" Height="40"/>
+            <Label x:Name="critLabel" Content="Crit %&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,0.333,0" Grid.Column="2" Width="79" Height="39"/>
+            <Label x:Name="dodgeLabel" Content="Dodge %&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,75,0.333,0" Grid.Column="2" Width="79" Height="40"/>
+        </Grid>
+        <Image x:Name="ClassImage" HorizontalAlignment="Left" Height="155" Margin="59,36,0,0" VerticalAlignment="Top" Width="161" Source="/RPG;component/Sprites/Warrior.png" Stretch="Fill" >
+        </Image>
+        <Grid x:Name="explore_Button" HorizontalAlignment="Left" Height="155" Margin="355,36,0,0" VerticalAlignment="Top" Width="381">
+            <Button Content="Explore" HorizontalAlignment="Left" Margin="40,39,0,0" VerticalAlignment="Top" Width="75" Click="Explore_Click"/>
+            <Button x:Name="shop_Button" Content="Shop" HorizontalAlignment="Left" Margin="40,63,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Content="Spend Skill Pts" HorizontalAlignment="Left" Margin="40,87,0,0" VerticalAlignment="Top" Width="75" />
+            <Label x:Name="goldLabel" Content="Gold:" HorizontalAlignment="Left" Margin="120,63,0,0" VerticalAlignment="Top" Width="109"/>
+            <Label x:Name="skillPtsLabel" Content="Skill Pts:" HorizontalAlignment="Left" Margin="120,84,0,0" VerticalAlignment="Top" Width="109"/>
+        </Grid>
+
+    </Grid>
+</Window>
