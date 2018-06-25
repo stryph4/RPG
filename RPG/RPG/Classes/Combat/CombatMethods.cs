@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 
 namespace RPG.Classes
 {
-    public class CombatMain
+    public class CombatMethods
     {
         public static bool yourTurn = true;
         public static bool inCombat = true;
+        public static List<string> combatLog = new List<string>();
 
         public static double CalculateSpellDamage(Combatant attacker, Combatant defender)
         {
@@ -85,20 +86,17 @@ namespace RPG.Classes
             if (hero.ClassType == "Thief")
             {
                 double extraGold = enemy.Gold * .2;
-                Console.WriteLine($"You win! You received {enemy.Gold + (int)extraGold} gold and {enemy.Experience} experience points!");
+                MessageBox.Show($"You win! You received {enemy.Gold + (int)extraGold} gold and {enemy.Experience} experience points!");
             }
             else
             {
-                Console.WriteLine($"You win! You received {enemy.Gold} gold and {enemy.Experience} experience points!");
+                MessageBox.Show($"You win! You received {enemy.Gold} gold and {enemy.Experience} experience points!");
                 hero.Gold += enemy.Gold;
             }
             hero.Experience += enemy.Experience;
             Buffs.ResetStatsAndBuffs(hero);
             inCombat = false;
             Debuffs.ClearEnemyDebuffs();
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
-            Console.Clear();
             CharacterMethods.LevelUp(hero);
             return;
         }
@@ -117,7 +115,7 @@ namespace RPG.Classes
             }
             if (combatant.AbsorbAmount > 0 && tempDamage - damage > 0)
             {
-                Console.WriteLine($"{tempDamage - damage} damage was absorbed.");
+                combatLog.Insert(0, $"{tempDamage - damage} damage was absorbed.");
             }
             combatant.AbsorbAmount -= tempDamage;
             if (combatant.AbsorbAmount < 0)
@@ -125,8 +123,14 @@ namespace RPG.Classes
                 combatant.AbsorbAmount = 0;
             }
 
-
             return damage;
+        }
+
+        public static void Attack(Combatant attacker, Combatant defender)
+        {
+            double damage = CalculateAttackDamage(attacker, defender);
+            damage = AbsorbCalculator(defender, (int)damage);
+            combatLog.Insert(0, $"{attacker.Name}'s attack hits {defender.Name} for {(int)damage} damage.");
         }
     }
 }

@@ -42,6 +42,11 @@ namespace RPG.Windows
             MP_Bar.Maximum = StoredCombatants.Hero.MaxMP;
             MP_Bar.Minimum = 0;
             MP_Bar.Value = StoredCombatants.Hero.MP;
+            Enemy_HP.Maximum = StoredCombatants.Enemy.MaxHP;
+            Enemy_HP.Minimum = 0;
+            Enemy_HP.Value = StoredCombatants.Enemy.HP;
+
+
 
 
         }
@@ -51,16 +56,21 @@ namespace RPG.Windows
             ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + StoredCombatants.Hero.ClassType + ".png", UriKind.Relative));
         }
 
+        public void ShowEnemyimage()
+        {
+            EnemyImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + StoredCombatants.Enemy.Name + ".png"));
+        }
+
         private void Attack_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            CombatMethods.Attack(StoredCombatants.Hero, StoredCombatants.Enemy);
         }
 
         private void Item_Button_Click(object sender, RoutedEventArgs e)
         {
             if (ItemBox.SelectedIndex.ToString().Contains("Potion"))
             {
-
+                Items.UsePotion(StoredCombatants.Hero);
             }
         }
 

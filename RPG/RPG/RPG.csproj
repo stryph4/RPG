@@ -68,6 +68,7 @@
     <Compile Include="Classes\ExplorationZones\ForestEnemies\Slime.cs" />
     <Compile Include="Classes\GameFunctionality\CharacterMethods.cs" />
     <Compile Include="Classes\GameFunctionality\InventoryMethods.cs" />
+    <Compile Include="Classes\Items.cs" />
     <Compile Include="Classes\LoadOrSaveGame\Load.cs" />
     <Compile Include="Classes\LoadOrSaveGame\Save.cs" />
     <Compile Include="Classes\Skills\MageSkills.cs" />

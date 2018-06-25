@@ -22,12 +22,14 @@ namespace RPG.Classes
             if (explore >= 50 && explore <= 90)
             {
                 MessageBox.Show("You encountered a Big Slime!");
+                StoredCombatants.Enemy = new BigSlime("Big Slime", "Enemy");
                 combat.ShowDialog();
             }
             if (explore < 50)
             {
 
                 MessageBox.Show("You encountered a Slime!");
+                StoredCombatants.Enemy = new Slime("Slime", "Enemy");
                 combat.ShowDialog();
             }
             if (explore > 90 && explore < 99)
@@ -50,14 +52,14 @@ namespace RPG.Classes
                 }
                 else
                 {
-                    MessageBox.Show($"You found a chest containing a mana potion!");
-                    if (hero.Inventory.ContainsKey("Mana Potion"))
+                    MessageBox.Show($"You found a chest containing an ether!");
+                    if (hero.Inventory.ContainsKey("Ether"))
                     {
-                        hero.Inventory["Mana Potion"] += 1;
+                        hero.Inventory["Ether"] += 1;
                     }
                     else
                     {
-                        hero.Inventory["Mana Potion"] = 1;
+                        hero.Inventory["Ether"] = 1;
                     }
                     return;
                 }
