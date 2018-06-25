@@ -1,4 +1,4 @@
-﻿using Game.Classes;
+﻿using RPG.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,21 +20,25 @@ namespace RPG.Windows
     /// </summary>
     public partial class ExploreWindow : Window
     {
+
         public ExploreWindow(Combatant hero)
         {
             InitializeComponent();
+            WindowPositioner.CenterWindowOnScreen(this);
             zoneSelector.Items.Add("Forest");
-            
+
         }
 
         private void Okay_Button_Clicked(object sender, RoutedEventArgs e)
         {
             if (zoneSelector.SelectedIndex == 0)
             {
-                ForestExplore forestExplore = new ForestExplore();
-                forestExplore.ShowDialog();
+                
+                    ForestExplore forestExplore = new ForestExplore(StoredCombatants.Hero);
+                    Close();
+                    forestExplore.ShowDialog();
 
-                Close();
+
             }
         }
 

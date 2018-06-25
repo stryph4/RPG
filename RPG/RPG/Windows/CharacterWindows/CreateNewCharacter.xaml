@@ -16,6 +16,7 @@
             <RadioButton x:Name="thiefButton" GroupName="ClassChoice" Content="Thief" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="thiefButton_Checked"/>
             <RadioButton x:Name="warriorButton" GroupName="ClassChoice" Content="Warrior" HorizontalAlignment="Left" Margin="10,10,0,81" VerticalAlignment="Top" IsChecked="True" FontFamily="Calibri" FontSize="16" Checked="warriorButton_Checked"/>
         </Grid>
+        <Image x:Name="ClassImage" HorizontalAlignment="Left" Height="130" Margin="27,95,0,0" VerticalAlignment="Top" Width="123" Source="/RPG;component/Sprites/Warrior.png" Stretch="Fill" />
 
 
     </Grid>

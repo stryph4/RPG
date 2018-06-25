@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Classes.ClassTypes;
+using System.Windows;
+using RPG.Classes;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class CharacterMethods
     {
@@ -53,74 +54,14 @@ namespace Game.Classes
                 hero.MaxHP = (int)increaseHP;
                 double increaseMP = (double)hero.MaxMP + hero.MaxMP * .1;
                 hero.MaxMP = (int)increaseMP;
-                Console.WriteLine($"Congratulations! You have advanced to level {hero.Level}!");
-                Console.WriteLine($"Your maximum HP has increased to {hero.MaxHP} and your maximum resource has increased to {hero.MaxMP}");
-                Console.WriteLine("You've earned 2 stat points!");
+                MessageBox.Show($"Congratulations!You have advanced to level{hero.Level} Your maximum HP has increased to {hero.MaxHP} and your maximum resource has increased to {hero.MaxMP}. You've earned 2 stat points!");
                 hero.SkillPoints += 2;
                 hero.HP = hero.MaxHP;
                 hero.MP = hero.MaxMP;
                 hero.Experience -= hero.ExperienceToLevel;
                 hero.ExperienceToLevel = hero.Level * 12;
-                Console.WriteLine("Press any key to continue:");
-                Console.ReadKey();
                 Debuffs.ClearDebuffs();
             }
-        }
-
-        public static void SpendSkillPoints(Combatant hero)
-        {
-            string[] validInputs = new string[4] { "S", "A", "I", "Q" };
-            string input = "";
-            if (hero.SkillPoints > 0)
-            {
-
-                while (!(validInputs.Contains(input)))
-                {
-                    Console.Clear();
-                    Console.WriteLine("(S)trength");
-                    Console.WriteLine("(A)gility");
-                    Console.WriteLine("(I)ntelligence");
-                    Console.WriteLine("(Q)uit to Main Menu");
-                    Console.Write("Choose a stat to increase:");
-                    input = Console.ReadLine().ToUpper();
-
-                }
-
-            }
-
-            else
-            {
-                Console.WriteLine("You have no stat points to spend.");
-
-            }
-
-            if (input == "S")
-            {
-                hero.SkillPoints--;
-                hero.Strength++;
-                Console.WriteLine("Your strength has been increased by 1 point.");
-                UpdateStats(hero);
-
-            }
-            if (input == "A")
-            {
-                hero.SkillPoints--;
-                hero.Agility++;
-                Console.WriteLine("Your agility has been increased by 1 point.");
-                UpdateStats(hero);
-            }
-            if (input == "I")
-            {
-                hero.SkillPoints--;
-                hero.Intelligence++;
-                Console.WriteLine("Your intelligence has been increased by 1 point.");
-                UpdateStats(hero);
-            }
-            if (input == "Q")
-            {
-                return;
-            }
-
         }
 
         public static void UpdateStats(Combatant hero)
@@ -168,27 +109,25 @@ namespace Game.Classes
 
         public static void InitializeInventoryAndSpells(Combatant hero)
         {
-            hero.Inventory["potion"] = 5;
-            hero.Inventory["mana potion"] = 5;
+            hero.Inventory["Potion"] = 5;
+            hero.Inventory["Ether"] = 5;
 
             if (hero.ClassType == "Warrior")
             {
-                hero.Skills.Add("1", "Berserker (free) Increase attack power at the cost of defense.");
+                hero.Skills.Add("Berserker (free)", "Increase attack power at the cost of defense.");
             }
             if (hero.ClassType == "Thief")
             {
-                hero.Skills.Add("1", "Poisoned Blade (10 energy) Basic attack which also poisons the enemy");
+                hero.Skills.Add("Poisoned Blade (10 MP)", "Basic attack which also poisons the enemy");
             }
             if (hero.ClassType == "Mage")
             {
-                hero.Skills.Add("1", "Fireball (20 MP) Hurl a ball of fire at the enemy");
+                hero.Skills.Add("Fireball (20 MP)", "Hurl a ball of fire at the enemy");
             }
             if (hero.ClassType == "Paladin")
             {
-                hero.Skills.Add("1", "Heal (20 MP) Restores HP.");
+                hero.Skills.Add("Heal (20 MP)", "Restores HP.");
             }
-
-            Console.Clear();
         }
 
     }

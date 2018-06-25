@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class Save
     {

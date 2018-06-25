@@ -8,15 +8,29 @@
         Title="Main Menu" Height="450" Width="800" FontFamily="Calibri" Background="White">
     <Grid Background="Gray">
         <Grid HorizontalAlignment="Left" Height="155" Margin="50,225,0,0" VerticalAlignment="Top" Width="213">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="73*"/>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="119*"/>
+            </Grid.ColumnDefinitions>
             <Label x:Name="nameLabel" Content="Name&#xA;" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
             <Label x:Name="levelLabel" Content="Level&#xA;" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top"/>
             <Label x:Name="classLabel" Content="Class&#xA;" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top"/>
             <Label x:Name="experienceLabel" Content="Experience" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top"/>
-            <Grid HorizontalAlignment="Left" Height="145" Margin="91,0,0,0" VerticalAlignment="Top" Width="122">
+            <Grid HorizontalAlignment="Left" Height="145" Margin="2.438,0,0,0" VerticalAlignment="Top" Width="122" Grid.ColumnSpan="2" Grid.Column="2">
                 <Label x:Name="healthLabel" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,10,0" VerticalAlignment="Top" Width="97" Height="25"/>
                 <Label x:Name="mpLabel" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,13,0" VerticalAlignment="Top" Width="97" Height="26"/>
-                <ProgressBar x:Name="HP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,10,0,0" VerticalAlignment="Top" Width="100" Foreground="Lime"/>
-                <ProgressBar x:Name="MP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,50,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF"/>
+                <ProgressBar x:Name="HP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,10,0,0" VerticalAlignment="Top" Width="100" Foreground="Lime">
+                    <ProgressBar.Effect>
+                        <DropShadowEffect/>
+                    </ProgressBar.Effect>
+                </ProgressBar>
+                <ProgressBar x:Name="MP_Bar" HorizontalAlignment="Left" Height="10" Margin="12,50,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF">
+                    <ProgressBar.Effect>
+                        <DropShadowEffect/>
+                    </ProgressBar.Effect>
+                </ProgressBar>
             </Grid>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="133" Margin="300,225,0,0" VerticalAlignment="Top" Width="289">
@@ -36,6 +50,9 @@
             <Label x:Name="dodgeLabel" Content="Dodge %&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,75,0.333,0" Grid.Column="2" Width="79" Height="40"/>
         </Grid>
         <Image x:Name="ClassImage" HorizontalAlignment="Left" Height="155" Margin="59,36,0,0" VerticalAlignment="Top" Width="161" Source="/RPG;component/Sprites/Warrior.png" Stretch="Fill" >
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
         </Image>
         <Grid x:Name="explore_Button" HorizontalAlignment="Left" Height="155" Margin="355,36,0,0" VerticalAlignment="Top" Width="381">
             <Button Content="Explore" HorizontalAlignment="Left" Margin="40,39,0,0" VerticalAlignment="Top" Width="75" Click="Explore_Click"/>
@@ -44,6 +61,21 @@
             <Label x:Name="goldLabel" Content="Gold:" HorizontalAlignment="Left" Margin="120,63,0,0" VerticalAlignment="Top" Width="109"/>
             <Label x:Name="skillPtsLabel" Content="Skill Pts:" HorizontalAlignment="Left" Margin="120,84,0,0" VerticalAlignment="Top" Width="109"/>
         </Grid>
+        <Border x:Name="HeroBorder" BorderBrush="#FFC7C7C7" BorderThickness="1" HorizontalAlignment="Left" Height="163" Margin="50,217,0,0" VerticalAlignment="Top" Width="213">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+        <Border x:Name="HeroBorder_Copy" BorderBrush="#FFC7C7C7" BorderThickness="1" HorizontalAlignment="Left" Height="163" Margin="288,217,0,0" VerticalAlignment="Top" Width="448">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+        <Border x:Name="HeroBorder_Copy1" BorderBrush="#FFC7C7C7" BorderThickness="1" HorizontalAlignment="Left" Height="155" Margin="355,36,0,0" VerticalAlignment="Top" Width="213">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
 
     </Grid>
 </Window>

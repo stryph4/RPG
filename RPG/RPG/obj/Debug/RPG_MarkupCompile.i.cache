@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\App.xaml
-6-1626162142
+71410008790
 
-36-936423926
+371040035430
 131569487696
-Windows\CharacterWindows\CharacterMenu.xaml;Windows\CharacterWindows\CreateNewCharacter.xaml;Windows\Zones\ExploreWindow.xaml;Windows\Zones\ForestExplore.xaml;Windows\MainWindow.xaml;Windows\CharacterWindows\QuitWindow.xaml;
+Windows\CharacterWindows\CharacterMenu.xaml;Windows\CharacterWindows\CreateNewCharacter.xaml;Windows\CombatWindow.xaml;Windows\Zones\ExploreWindow.xaml;Windows\Zones\ForestExplore.xaml;Windows\MainWindow.xaml;Windows\CharacterWindows\QuitWindow.xaml;
 
 True
 

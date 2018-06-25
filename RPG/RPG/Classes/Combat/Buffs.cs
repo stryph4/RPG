@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class Buffs
     {

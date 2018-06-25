@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Classes;
+using RPG.Classes;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class ThiefSkills
     {
         public static void Spellbook(Combatant hero, Combatant enemy)
         {
 
-            Skills.PrintSkills(hero, hero.Skills);
             Console.Write("Enter the number of the skill to use: ");
             string skill = Console.ReadLine().ToLower();
 
@@ -33,7 +32,6 @@ namespace Game.Classes
 
             else
             {
-                Skills.SkillNotFound(hero, enemy);
 
             }
 

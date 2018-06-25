@@ -4,45 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public class WarriorSkills
     {
-        public static void Spellbook(Combatant hero, Combatant enemy)
-        {
-            Random random = new Random();
-
-            Skills.PrintSkills(hero, hero.Skills);
-            Console.Write("Enter the number of the skill to use: ");
-            string skill = Console.ReadLine().ToLower();
-
-            if (hero.Skills.ContainsKey(skill))
-            {
-                double critChance = random.NextDouble() * 100;
-
-                if (skill == "1")
-                {
-
-                    CastBerserker(hero);
-                }
-                else
-                {
-                    Skills.NotEnoughMP(hero, enemy);
-                    hero.HeroTurn(hero, enemy);
-
-                }
-            }
-            else
-            {
-                Skills.SkillNotFound(hero, enemy);
-                hero.HeroTurn(hero, enemy);
-
-            }
-
-
-
-
-        }
 
         public static void CastBerserker(Combatant hero)
         {

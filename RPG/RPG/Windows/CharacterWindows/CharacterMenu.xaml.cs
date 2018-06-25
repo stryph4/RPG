@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Game.Classes;
+using RPG.Classes;
 
 namespace RPG.Windows
 {
@@ -23,6 +23,7 @@ namespace RPG.Windows
         public CharacterMenu(Combatant hero)
         {
             InitializeComponent();
+            WindowPositioner.CenterWindowOnScreen(this);
             HP_Bar.Maximum = hero.MaxHP;
             MP_Bar.Maximum = hero.MaxMP;
             HP_Bar.Minimum = 0;
@@ -31,9 +32,11 @@ namespace RPG.Windows
             MP_Bar.Value = hero.MP;
             PrintHero(hero);
             ShowHeroImage(hero);
+            StoredCombatants.Hero = hero;
+            CharacterMethods.InitializeInventoryAndSpells(StoredCombatants.Hero);
 
 
-        }
+    }
 
         /// <summary>
         /// Sets labels of hero stats in the main menu
@@ -77,7 +80,7 @@ namespace RPG.Windows
 
         private void Explore_Click(object sender, RoutedEventArgs e)
         {
-            ExploreWindow exploreWindow = new ExploreWindow(hero);
+            ExploreWindow exploreWindow = new ExploreWindow(StoredCombatants.Hero);
             exploreWindow.ShowDialog();
 
         }

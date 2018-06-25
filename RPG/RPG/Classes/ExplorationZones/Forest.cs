@@ -1,61 +1,70 @@
-﻿using System;
+﻿using RPG.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class Forest
     {
         static Random random = new Random();
+        static string zoneName = "Forest";
 
 
         public static void ExploreForest(Combatant hero)
         {
+            CombatWindow combat = new CombatWindow();
             int explore = random.Next(0, 101);
 
             if (explore >= 50 && explore <= 90)
             {
-                Console.WriteLine("You have encountered a Big Slime! Press any key to begin the encounter!");
-                Console.ReadKey();
-                CombatMain.StartCombat(hero, new BigSlime("Big Slime", "Enemy"));
+                MessageBox.Show("You encountered a Big Slime!");
+                combat.ShowDialog();
             }
             if (explore < 50)
             {
-                Console.WriteLine("You have encountered a Slime! Press any key to begin the encounter!");
-                Console.ReadKey();
-                CombatMain.StartCombat(hero, new Slime("Slime", "Enemy"));
+
+                MessageBox.Show("You encountered a Slime!");
+                combat.ShowDialog();
             }
             if (explore > 90 && explore < 99)
             {
-                Console.WriteLine("You found a chest! Press any key to open it!");
-                Console.ReadKey();
                 int chest = random.Next(0, 11);
                 if (chest < 3)
                 {
                     int gold = random.Next(10, 20);
-                    Console.WriteLine($"You found {gold} gold!");
+                    MessageBox.Show($"You found a chest containing {gold} gold!");
                     hero.Gold += gold;
                     return;
 
                 }
                 else if (chest >= 4 && chest <= 7)
                 {
-                    Console.WriteLine($"You found a potion!");
-                    hero.Inventory["potion"] += 1;
+                    MessageBox.Show($"You found a chest containing a potion!");
+
+
                     return;
                 }
                 else
                 {
-                    Console.WriteLine("You found a mana potion!");
-                    hero.Inventory["mana potion"] += 1;
+                    MessageBox.Show($"You found a chest containing a mana potion!");
+                    if (hero.Inventory.ContainsKey("Mana Potion"))
+                    {
+                        hero.Inventory["Mana Potion"] += 1;
+                    }
+                    else
+                    {
+                        hero.Inventory["Mana Potion"] = 1;
+                    }
                     return;
                 }
             }
             if (explore >= 99)
             {
-                Console.WriteLine("You found an experience shrine! You have been granted a free level!");
+                MessageBox.Show($"You found an experience shrine, and have been granted a free level!");
                 hero.Experience += hero.ExperienceToLevel;
                 CharacterMethods.LevelUp(hero);
                 return;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public static class Load
     {
@@ -89,7 +89,6 @@ namespace Game.Classes
             {
                 Console.WriteLine("File not found. Press any key to return to the start menu.");
                 Console.ReadKey();
-                Menu.StartMenu();
                 return null;
             }
 

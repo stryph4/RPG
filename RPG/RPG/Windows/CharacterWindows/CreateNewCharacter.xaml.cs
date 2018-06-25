@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Game.Classes;
+using RPG.Classes;
 using RPG.Windows;
 
 
@@ -23,10 +23,14 @@ namespace RPG
     public partial class CreateNewCharacter : Window
     {
 
+        bool showClassImage = false;
+
         public CreateNewCharacter()
         {
 
             InitializeComponent();
+            ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/Warrior.png", UriKind.Relative));
+            showClassImage = true;
             WindowPositioner.CenterWindowOnScreen(this);
         }
 
@@ -41,6 +45,12 @@ namespace RPG
 
         private void mageButton_Checked(object sender, RoutedEventArgs e)
         {
+            if (showClassImage == true)
+            {
+
+                ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/Mage.png", UriKind.Relative));
+            }
+
             CharacterMethods.WarriorSelected = false;
             CharacterMethods.ThiefSelected = false;
             CharacterMethods.MageSelected = true;
@@ -49,6 +59,12 @@ namespace RPG
 
         private void paladinButton_Checked(object sender, RoutedEventArgs e)
         {
+            if (showClassImage == true)
+            {
+
+                ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/Paladin.png", UriKind.Relative));
+            }
+
             CharacterMethods.WarriorSelected = false;
             CharacterMethods.ThiefSelected = false;
             CharacterMethods.MageSelected = false;
@@ -57,6 +73,12 @@ namespace RPG
 
         private void thiefButton_Checked(object sender, RoutedEventArgs e)
         {
+            if (showClassImage == true)
+            {
+
+                ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/Thief.png", UriKind.Relative));
+            }
+
             CharacterMethods.WarriorSelected = false;
             CharacterMethods.ThiefSelected = true;
             CharacterMethods.MageSelected = false;
@@ -65,6 +87,12 @@ namespace RPG
 
         private void warriorButton_Checked(object sender, RoutedEventArgs e)
         {
+            if (showClassImage == true)
+            {
+
+                ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/Warrior.png", UriKind.Relative));
+            }
+
             CharacterMethods.WarriorSelected = true;
             CharacterMethods.ThiefSelected = false;
             CharacterMethods.MageSelected = false;
@@ -73,7 +101,10 @@ namespace RPG
 
         private void Enter(object sender, KeyEventArgs e)
         {
-
+            CharacterMethods.Name = NameCharacter.Text;
+            CharacterMenu characterMenu = new CharacterMenu(CharacterMethods.CreateCharacter());
+            characterMenu.Show();
+            Close();
         }
     }
 }

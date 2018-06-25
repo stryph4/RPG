@@ -48,3 +48,5 @@ C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\Zones\ExploreWindow.g.
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\MainWindow.g.cs
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\Zones\ExploreWindow.baml
 C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\MainWindow.baml
+C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\CombatWindow.g.cs
+C:\Users\stryp\Desktop\repo\RPG\RPG\RPG\obj\Debug\Windows\CombatWindow.baml

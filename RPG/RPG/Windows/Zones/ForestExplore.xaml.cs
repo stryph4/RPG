@@ -1,4 +1,4 @@
-﻿using Game.Classes;
+﻿using RPG.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +20,11 @@ namespace RPG.Windows
     /// </summary>
     public partial class ForestExplore : Window
     {
-        public ForestExplore()
+        public ForestExplore(Combatant hero)
         {
             InitializeComponent();
+            WindowPositioner.CenterWindowOnScreen(this);
+            ShowHeroImage();
         }
 
         private void Leave_Clicked(object sender, RoutedEventArgs e)
@@ -32,13 +34,12 @@ namespace RPG.Windows
 
         private void Explore_Clicked(object sender, RoutedEventArgs e)
         {
-
+            Forest.ExploreForest(StoredCombatants.Hero);
         }
 
-        public void ShowHeroImage(Combatant hero)
+        public void ShowHeroImage()
         {
-            ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + hero.ClassType + ".png", UriKind.Relative));
-
+            ClassImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + StoredCombatants.Hero.ClassType + ".png", UriKind.Relative));
         }
     }
 }

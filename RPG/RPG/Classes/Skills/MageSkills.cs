@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Classes;
+using RPG.Classes;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public class MageSkills
     {
@@ -13,8 +13,6 @@ namespace Game.Classes
         public static void Spellbook(Combatant hero, Combatant enemy)
         {
 
-
-            Skills.PrintSkills(hero, hero.Skills);
             Console.Write("Enter the number of the skill to use: ");
             string skill = Console.ReadLine().ToLower();
 
@@ -38,7 +36,6 @@ namespace Game.Classes
 
             else if (!hero.Skills.ContainsKey(skill))
             {
-                Skills.SkillNotFound(hero, enemy);
 
             }
             else
@@ -51,7 +48,7 @@ namespace Game.Classes
         private static void CastMagicShield(Combatant hero)
         {
             hero.AbsorbAmount += hero.MaxMP / 20;
-            hero.MP -= hero.MaxMP / 20;
+            hero.MP -= hero.MaxMP / 20 * 2;
             Console.WriteLine($"You converted {hero.MaxMP / 20} into a shield that absorbs damage.");
         }
 

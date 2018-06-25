@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Game.Classes;
+using RPG.Classes;
 
-namespace Game.Classes
+namespace RPG.Classes
 {
     public class Combatant
     {
@@ -64,7 +64,7 @@ namespace Game.Classes
         /// Combatant's base spell power before buffs
         /// </summary>
         public double BaseSpellPower { get; set; }
-        
+
         /// <summary>
         /// The combatant's defense
         /// </summary>
@@ -158,91 +158,7 @@ namespace Game.Classes
             SkillPoints = 0;
 
         }
-
-
-
-        public void HeroTurn(Combatant hero, Combatant enemy)
-        {
-            string menuInput = "";
-            Random random = new Random();
-            string[] menuChoices = new string[3] { "A", "S", "I" };
-
-            menuInput = "";
-            while (!(menuChoices.Contains(menuInput)))
-            {
-
-                Console.WriteLine("(A)ttack");
-                Console.WriteLine("(S)kill");
-                Console.WriteLine("(I)tem");
-                Console.Write("> Choose an action: ");
-                menuInput = Console.ReadLine().ToUpper();
-            }
-
-            switch (menuInput)
-            {
-                case "A":
-                    if (hero.AttackPower > enemy.Defense)
-                    {
-                        double dodgeChance = CombatMain.CalculateDodgeAndCrit();
-                        double critChance = CombatMain.CalculateDodgeAndCrit();
-                        double damage = CombatMain.CalculateAttackDamage(hero, enemy);
-
-                        if (dodgeChance <= enemy.DodgeRate)
-                        {
-                            Console.WriteLine($"{enemy.Name} dodges {hero.Name}'s attack.");
-                            CombatMain.yourTurn = false;
-                        }
-
-                        else if (critChance <= hero.CriticalHitRate)
-                        {
-                            damage *= 2;
-                            MessageBox.Show($"Your attack hits {enemy.Name} for {(int)damage} damage (CRITICAL).");
-                            damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
-                            enemy.HP -= (int)damage;
-                            CombatMain.yourTurn = false;
-                        }
-
-                        else
-                        {
-                            enemy.HP -= (int)damage;
-                            damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
-                            Console.WriteLine($"Your attack hits {enemy.Name} for {(int)damage} damage.");
-                            CombatMain.yourTurn = false;
-                        }
-                    }
-                    break;
-
-
-                case "S":
-                    if (hero.ClassType == "Mage")
-                    {
-                        MageSkills.Spellbook(hero, enemy);
-                    }
-                    if (hero.ClassType == "Thief")
-                    {
-                        ThiefSkills.Spellbook(hero, enemy);
-                    }
-                    if (hero.ClassType == "Warrior")
-                    {
-                        WarriorSkills.Spellbook(hero, enemy);
-                    }
-                    if (hero.ClassType == "Paladin")
-                    {
-                        PaladinSkills.Spellbook(hero, enemy);
-                    }
-                    break;
-
-                case "I":
-                    InventoryMethods.UseItem(hero, enemy);
-                    break;
-
-            }
-        }
-
-        public virtual void EnemyTurn(Combatant hero, Combatant enemy)
-        {
-
-        }
-
     }
 }
+
+

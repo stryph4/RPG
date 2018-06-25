@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Classes;
+using RPG.Classes;
 
-namespace Game.Classes
+namespace RPG.Classes
 
 
 {
@@ -23,36 +23,7 @@ namespace Game.Classes
             Console.WriteLine("Not enough resource! Try again.");
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
-            hero.HeroTurn(hero, enemy);
-        }
-
-        /// <summary>
-        /// Indicates that the skill called was not found
-        /// </summary>
-        /// <param name="hero"></param>
-        /// <param name="enemy"></param>
-        public static void SkillNotFound(Combatant hero, Combatant enemy)
-        {
-            Console.WriteLine("The skill could not be found! Try again.");
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
-            hero.HeroTurn(hero, enemy);
-        }
-
-        /// <summary>
-        /// Prints the list of skills for your current hero
-        /// </summary>
-        /// <param name="hero"></param>
-        /// <param name="skills"></param>
-        public static void PrintSkills(Combatant hero, Dictionary<string, string> skills)
-        {
-            Console.WriteLine("Skill:".PadRight(40) + "Description:");
-            Console.WriteLine("-------------------------------------------------------------------------");
-            foreach (KeyValuePair<string, string> skill in skills)
-            {
-                Console.WriteLine(skill.Key.Substring(0, 1).ToUpper() + skill.Key.Substring(1).PadRight(40) + skill.Value);
-            }
-            Console.WriteLine("-------------------------------------------------------------------------");
+            //hero.HeroTurn(hero, enemy);
         }
 
         public static void SetBaseStats(Combatant hero)
@@ -65,7 +36,7 @@ namespace Game.Classes
             hero.BaseDodge = hero.DodgeRate;
         }
 
-        
+
 
     }
 }

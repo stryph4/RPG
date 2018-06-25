@@ -57,17 +57,17 @@
     <Compile Include="Classes\ClassTypes\Combatant.cs" />
     <Compile Include="Classes\ClassTypes\Mage.cs" />
     <Compile Include="Classes\ClassTypes\Paladin.cs" />
+    <Compile Include="Classes\ClassTypes\StoredCombatants.cs" />
     <Compile Include="Classes\ClassTypes\Thief.cs" />
     <Compile Include="Classes\ClassTypes\Warrior.cs" />
     <Compile Include="Classes\Combat\Buffs.cs" />
-    <Compile Include="Classes\Combat\CombatMain.cs" />
+    <Compile Include="Classes\Combat\CombatMethods.cs" />
     <Compile Include="Classes\Combat\Debuffs.cs" />
     <Compile Include="Classes\ExplorationZones\Forest.cs" />
     <Compile Include="Classes\ExplorationZones\ForestEnemies\BigSlime.cs" />
     <Compile Include="Classes\ExplorationZones\ForestEnemies\Slime.cs" />
     <Compile Include="Classes\GameFunctionality\CharacterMethods.cs" />
     <Compile Include="Classes\GameFunctionality\InventoryMethods.cs" />
-    <Compile Include="Classes\GameFunctionality\Menu.cs" />
     <Compile Include="Classes\LoadOrSaveGame\Load.cs" />
     <Compile Include="Classes\LoadOrSaveGame\Save.cs" />
     <Compile Include="Classes\Skills\MageSkills.cs" />
@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="Windows\CharacterWindows\CreateNewCharacter.xaml.cs">
       <DependentUpon>CreateNewCharacter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CombatWindow.xaml.cs">
+      <DependentUpon>CombatWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Zones\ExploreWindow.xaml.cs">
       <DependentUpon>ExploreWindow.xaml</DependentUpon>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\CharacterWindows\CreateNewCharacter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CombatWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
