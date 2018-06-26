@@ -9,7 +9,7 @@
     <Grid Background="Gray">
         <Grid HorizontalAlignment="Left" Height="98" Margin="37,108,0,0" VerticalAlignment="Top" Width="235">
             <Label x:Name="Zone_Label" Content="Choose a zone to travel to:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,-41,4,103" Width="219" FontFamily="Calibri" FontSize="16" FontStretch="Condensed" Height="36"/>
-            <ComboBox x:Name="zoneSelector" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="zoneSelector" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         </Grid>
         <Button x:Name="okay_Button" Content="Okay" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" Width="75" Click="Okay_Button_Clicked" FontFamily="Calibri"/>
         <Button x:Name="cancel_Button" Content="Cancel" HorizontalAlignment="Left" Margin="159,220,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Button_Clicked" FontFamily="Calibri"/>

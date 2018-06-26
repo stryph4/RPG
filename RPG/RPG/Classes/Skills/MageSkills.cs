@@ -18,7 +18,7 @@ namespace RPG.Classes
 
             if (hero.Skills.ContainsKey(skill))
             {
-                double critChance = CombatMain.CalculateDodgeAndCrit();
+                double critChance = CombatMethods.CalculateDodgeAndCrit();
 
                 if (skill == "1" && hero.MP >= 20)
                 {
@@ -55,21 +55,21 @@ namespace RPG.Classes
         private static void CastFireball(Combatant hero, Combatant enemy, string skill, double critChance)
         {
             hero.MP -= 20;
-            double damage = CombatMain.CalculateSpellDamage(hero, enemy);
+            double damage = CombatMethods.CalculateSpellDamage(hero, enemy);
             if (critChance <= hero.CriticalHitRate)
             {
                 damage *= 2;
-                damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
+                damage = CombatMethods.AbsorbCalculator(enemy, (int)damage);
                 Console.WriteLine($"Your fireball hit {enemy.Name} for {(int)damage} damage (CRITICAL).");
                 enemy.HP -= (int)damage;
-                CombatMain.yourTurn = false;
+                CombatMethods.yourTurn = false;
             }
             else
             {
-                damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
+                damage = CombatMethods.AbsorbCalculator(enemy, (int)damage);
                 Console.WriteLine($"Your fireball hit {enemy.Name} for {(int)damage} damage.");
                 enemy.HP -= (int)damage;
-                CombatMain.yourTurn = false;
+                CombatMethods.yourTurn = false;
             }
         }
     }

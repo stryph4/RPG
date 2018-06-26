@@ -173,6 +173,9 @@
   <ItemGroup>
     <Resource Include="Windows\Zones\Backgrounds\forest.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Sprites\Big Slime.png" />
+    <Resource Include="Sprites\Slime.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

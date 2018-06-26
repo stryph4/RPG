@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace RPG.Classes
 {
@@ -131,6 +132,7 @@ namespace RPG.Classes
             double damage = CalculateAttackDamage(attacker, defender);
             damage = AbsorbCalculator(defender, (int)damage);
             combatLog.Insert(0, $"{attacker.Name}'s attack hits {defender.Name} for {(int)damage} damage.");
+            defender.HP -= (int)damage;
         }
     }
 }

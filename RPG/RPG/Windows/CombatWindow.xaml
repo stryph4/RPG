@@ -24,14 +24,14 @@
                 <ColumnDefinition Width="119*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="healthLabel" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,7,0" VerticalAlignment="Top" Width="97" Height="25" Grid.ColumnSpan="2"/>
-            <Label x:Name="mpLabel" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,10,0" VerticalAlignment="Top" Width="97" Height="26" Grid.ColumnSpan="2"/>
-            <ProgressBar x:Name="HP_Bar" HorizontalAlignment="Left" Height="10" Margin="9,0,0,90" VerticalAlignment="Bottom" Width="100" Foreground="Lime" Grid.ColumnSpan="2" ValueChanged="HP_Bar_ValueChanged">
+            <Label x:Name="hero_Health" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,7,0" VerticalAlignment="Top" Width="97" Height="25" Grid.ColumnSpan="2"/>
+            <Label x:Name="hero_MP" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,10,0" VerticalAlignment="Top" Width="97" Height="26" Grid.ColumnSpan="2"/>
+            <ProgressBar x:Name="hero_HP_Bar" HorizontalAlignment="Left" Height="10" Margin="9,0,0,90" VerticalAlignment="Bottom" Width="100" Foreground="Lime" Grid.ColumnSpan="2" ValueChanged="Hero_HP_Bar_ValueChanged">
                 <ProgressBar.Effect>
                     <DropShadowEffect/>
                 </ProgressBar.Effect>
             </ProgressBar>
-            <ProgressBar x:Name="MP_Bar" HorizontalAlignment="Left" Height="10" Margin="9,91,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF" Grid.ColumnSpan="2">
+            <ProgressBar x:Name="hero_MP_Bar" HorizontalAlignment="Left" Height="10" Margin="9,91,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF" Grid.ColumnSpan="2">
                 <ProgressBar.Effect>
                     <DropShadowEffect/>
                 </ProgressBar.Effect>
@@ -43,14 +43,22 @@
                 <ColumnDefinition Width="119*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="healthLabel1" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,7,0" VerticalAlignment="Top" Width="97" Height="25" Grid.ColumnSpan="2"/>
-            <Label x:Name="mpLabel1" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,10,0" VerticalAlignment="Top" Width="97" Height="26" Grid.ColumnSpan="2"/>
-            <ProgressBar x:Name="Enemy_HP" HorizontalAlignment="Left" Height="10" Margin="15,0,0,90" VerticalAlignment="Bottom" Width="100" Foreground="Lime" Grid.ColumnSpan="2"/>
-            <ProgressBar x:Name="Enemy_MP" HorizontalAlignment="Left" Height="10" Margin="15,91,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF" Grid.ColumnSpan="2"/>
+            <Label x:Name="enemy_Health" Content="Health&#xA;&#xA;" HorizontalAlignment="Right" Margin="0,20,7,0" VerticalAlignment="Top" Width="97" Height="25" Grid.ColumnSpan="2"/>
+            <Label x:Name="enemy_MP" Content="MP&#xA;" HorizontalAlignment="Right" Margin="0,65,10,0" VerticalAlignment="Top" Width="97" Height="26" Grid.ColumnSpan="2"/>
+            <ProgressBar x:Name="enemy_HP_Bar" HorizontalAlignment="Left" Height="10" Margin="15,0,0,90" VerticalAlignment="Bottom" Width="100" Foreground="Lime" Grid.ColumnSpan="2" ValueChanged="Enemy_HP_Bar_ValueChanged">
+                <ProgressBar.Effect>
+                    <DropShadowEffect/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <ProgressBar x:Name="enemy_MP_Bar" HorizontalAlignment="Left" Height="10" Margin="15,91,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF0000FC" Background="White" Foreground="#FF2300FF" Grid.ColumnSpan="2" ValueChanged="Enemy_MP_Bar_ValueChanged">
+                <ProgressBar.Effect>
+                    <DropShadowEffect/>
+                </ProgressBar.Effect>
+            </ProgressBar>
         </Grid>
         <Border x:Name="LogBorder" BorderBrush="#FFC7C7C7" BorderThickness="1" HorizontalAlignment="Left" Height="185" Margin="379,274,0,0" VerticalAlignment="Top" Width="238">
             <ScrollViewer>
-                <TextBlock x:Name="CombatLog" TextWrapping="Wrap" Background="#FF494949"><Run/><LineBreak/><Run/></TextBlock>
+                <TextBlock x:Name="CombatLog" TextWrapping="Wrap" Background="Gray" FontFamily="Calibri"><Run/><LineBreak/><Run/></TextBlock>
             </ScrollViewer>
         </Border>
         <Grid HorizontalAlignment="Left" Height="123" Margin="132,324,0,0" VerticalAlignment="Top" Width="234">

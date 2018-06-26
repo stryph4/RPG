@@ -35,7 +35,6 @@ namespace RPG.Windows
             {
                 
                     ForestExplore forestExplore = new ForestExplore(StoredCombatants.Hero);
-                    Close();
                     forestExplore.ShowDialog();
 
 

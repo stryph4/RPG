@@ -22,9 +22,11 @@ namespace RPG.Windows
     {
         public CombatWindow()
         {
+
             InitializeComponent();
             WindowPositioner.CenterWindowOnScreen(this);
             ShowHeroImage();
+            ShowEnemyimage();
 
             foreach (var kvp in StoredCombatants.Hero.Inventory)
             {
@@ -36,19 +38,43 @@ namespace RPG.Windows
                 SkillBox.Items.Add(kvp.Key);
             }
 
-            HP_Bar.Maximum = StoredCombatants.Hero.MaxHP;
-            HP_Bar.Minimum = 0;
-            HP_Bar.Value = StoredCombatants.Hero.HP;
-            MP_Bar.Maximum = StoredCombatants.Hero.MaxMP;
-            MP_Bar.Minimum = 0;
-            MP_Bar.Value = StoredCombatants.Hero.MP;
-            Enemy_HP.Maximum = StoredCombatants.Enemy.MaxHP;
-            Enemy_HP.Minimum = 0;
-            Enemy_HP.Value = StoredCombatants.Enemy.HP;
+            UpdateHPAndMP();
+            hero_HP_Bar.Maximum = StoredCombatants.Hero.MaxHP;
+            hero_HP_Bar.Minimum = 0;
+            hero_HP_Bar.Value = StoredCombatants.Hero.HP;
+            hero_MP_Bar.Maximum = StoredCombatants.Hero.MaxMP;
+            hero_MP_Bar.Minimum = 0;
+            hero_MP_Bar.Value = StoredCombatants.Hero.MP;
+            enemy_HP_Bar.Maximum = StoredCombatants.Enemy.MaxHP;
+            enemy_HP_Bar.Minimum = 0;
+            enemy_HP_Bar.Value = StoredCombatants.Enemy.HP;
+            enemy_MP_Bar.Maximum = StoredCombatants.Enemy.MaxMP;
+            enemy_MP_Bar.Minimum = 0;
+            enemy_MP_Bar.Value = StoredCombatants.Enemy.MP;
 
 
+        }
 
+        private void UpdateHPAndMP()
+        {
+            hero_Health.Content = $"HP: {StoredCombatants.Hero.HP} / {StoredCombatants.Hero.MaxHP}";
+            hero_MP.Content = $"MP: {StoredCombatants.Hero.MP} / {StoredCombatants.Hero.MaxMP}";
+            hero_Health.Content = $"HP: {StoredCombatants.Enemy.HP} / {StoredCombatants.Enemy.MaxHP}";
+            hero_MP.Content = $"MP: {StoredCombatants.Enemy.MP} / {StoredCombatants.Enemy.MaxMP}";
+            hero_HP_Bar.Value = StoredCombatants.Hero.HP;
+            hero_MP_Bar.Value = StoredCombatants.Hero.MP;
+            enemy_HP_Bar.Value = StoredCombatants.Enemy.HP;
+            enemy_MP_Bar.Value = StoredCombatants.Enemy.MP;
+        }
 
+        private void PrintCombatLog()
+        {
+            CombatLog.Text = String.Empty;
+            foreach (var item in CombatMethods.combatLog)
+            {
+                CombatLog.Text += item;
+                CombatLog.Text += Environment.NewLine;
+            }
         }
 
         public void ShowHeroImage()
@@ -58,12 +84,14 @@ namespace RPG.Windows
 
         public void ShowEnemyimage()
         {
-            EnemyImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + StoredCombatants.Enemy.Name + ".png"));
+            EnemyImage.Source = new BitmapImage(new Uri("/RPG;component/Sprites/" + StoredCombatants.Enemy.Name + ".png", UriKind.Relative));
         }
 
         private void Attack_Button_Click(object sender, RoutedEventArgs e)
         {
             CombatMethods.Attack(StoredCombatants.Hero, StoredCombatants.Enemy);
+            UpdateHPAndMP();
+            PrintCombatLog();
         }
 
         private void Item_Button_Click(object sender, RoutedEventArgs e)
@@ -79,7 +107,22 @@ namespace RPG.Windows
 
         }
 
-        private void HP_Bar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Hero_HP_Bar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Hero_MP_Bar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Enemy_HP_Bar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Enemy_MP_Bar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }

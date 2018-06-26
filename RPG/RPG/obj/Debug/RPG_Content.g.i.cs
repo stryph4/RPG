@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/zones/backgrounds/forest.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sprites/big%20slime.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sprites/slime.png")]
 
 

@@ -17,8 +17,8 @@ namespace RPG.Classes
 
             if (hero.Skills.ContainsKey(skill))
             {
-                double critChance = CombatMain.CalculateDodgeAndCrit();
-                double dodgeChance = CombatMain.CalculateDodgeAndCrit();
+                double critChance = CombatMethods.CalculateDodgeAndCrit();
+                double dodgeChance = CombatMethods.CalculateDodgeAndCrit();
                 if (skill == "1" && hero.MP >= 10)
                 {
                     
@@ -39,30 +39,30 @@ namespace RPG.Classes
 
         private static void CastPoisonBlade(Combatant hero, Combatant enemy, string skill, double critChance, double dodgeChance)
         {
-            double damage = CombatMain.CalculateAttackDamage(hero, enemy);
+            double damage = CombatMethods.CalculateAttackDamage(hero, enemy);
 
             hero.MP -= 10;
             if (dodgeChance <= enemy.DodgeRate)
             {
                 Console.WriteLine($"Your poisoned blade was dodged by {enemy.Name}!");
-                CombatMain.yourTurn = false;
+                CombatMethods.yourTurn = false;
             }
             else if (critChance <= hero.CriticalHitRate)
             {
                 damage *= 2;
-                damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
+                damage = CombatMethods.AbsorbCalculator(enemy, (int)damage);
                 Console.WriteLine($"Your poisoned blade hit {enemy.Name} for {(int)damage} damage (CRITICAL).");
                 Debuffs.enemyPoisoned = true;
                 enemy.HP -= (int)damage;
-                CombatMain.yourTurn = false;
+                CombatMethods.yourTurn = false;
             }
             else
             {
-                damage = CombatMain.AbsorbCalculator(enemy, (int)damage);
+                damage = CombatMethods.AbsorbCalculator(enemy, (int)damage);
                 Console.WriteLine($"Your poisoned blade hit {enemy.Name} for {(int)damage} damage.");
                 enemy.HP -= (int)damage;
                 Debuffs.enemyPoisoned = true;
-                CombatMain.yourTurn = false;
+                CombatMethods.yourTurn = false;
             }
 
         }

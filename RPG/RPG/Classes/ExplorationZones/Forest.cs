@@ -16,21 +16,26 @@ namespace RPG.Classes
 
         public static void ExploreForest(Combatant hero)
         {
-            CombatWindow combat = new CombatWindow();
+
             int explore = random.Next(0, 101);
 
             if (explore >= 50 && explore <= 90)
             {
-                MessageBox.Show("You encountered a Big Slime!");
                 StoredCombatants.Enemy = new BigSlime("Big Slime", "Enemy");
+                CombatWindow combat = new CombatWindow();
+                MessageBox.Show("You encountered a Big Slime!");
+                CombatMethods.inCombat = true;
                 combat.ShowDialog();
             }
             if (explore < 50)
             {
-
-                MessageBox.Show("You encountered a Slime!");
                 StoredCombatants.Enemy = new Slime("Slime", "Enemy");
+                CombatWindow combat = new CombatWindow();
+                MessageBox.Show("You encountered a Slime!");
+                CombatMethods.inCombat = true;
                 combat.ShowDialog();
+
+
             }
             if (explore > 90 && explore < 99)
             {
@@ -72,6 +77,5 @@ namespace RPG.Classes
                 return;
             }
         }
-
     }
 }

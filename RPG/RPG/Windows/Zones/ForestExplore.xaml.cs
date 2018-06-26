@@ -25,11 +25,6 @@ namespace RPG.Windows
             InitializeComponent();
             WindowPositioner.CenterWindowOnScreen(this);
             ShowHeroImage();
-            CombatMethods.inCombat = true;
-            while (CombatMethods.inCombat)
-            {
-
-            }
         }
 
         private void Leave_Clicked(object sender, RoutedEventArgs e)
