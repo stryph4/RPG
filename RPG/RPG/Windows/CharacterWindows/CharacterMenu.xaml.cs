@@ -33,7 +33,12 @@ namespace RPG.Windows
             PrintHero(hero);
             ShowHeroImage(hero);
             StoredCombatants.Hero = hero;
-            CharacterMethods.InitializeInventoryAndSpells(StoredCombatants.Hero);
+            if (CharacterMethods.CharacterCreated == false)
+            {
+                CharacterMethods.InitializeInventoryAndSpells(StoredCombatants.Hero);
+                CharacterMethods.CharacterCreated = true;
+            }
+
 
 
     }
@@ -81,7 +86,8 @@ namespace RPG.Windows
         private void Explore_Click(object sender, RoutedEventArgs e)
         {
             ExploreWindow exploreWindow = new ExploreWindow(StoredCombatants.Hero);
-            exploreWindow.ShowDialog();
+            exploreWindow.Show();
+            Close();
 
         }
 

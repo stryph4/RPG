@@ -29,6 +29,8 @@ namespace RPG.Windows
 
         private void Leave_Clicked(object sender, RoutedEventArgs e)
         {
+            CharacterMenu characterMenu = new CharacterMenu(StoredCombatants.Hero);
+            characterMenu.Show();
             Close();
         }
 

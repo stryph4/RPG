@@ -17,11 +17,8 @@ namespace RPG.Classes
             string[] files = (Directory.GetFiles(dir));
             foreach (var file in files)
             {
-                Console.WriteLine(file);
+                CombatMethods.combatLog.Insert(0, file);
             }
-            Console.WriteLine("------------------------------------------------------");
-            Console.WriteLine();
-            Console.Write("Type the name of the file to load: ");
             string path = Console.ReadLine();
             path = Path.Combine(dir, path);
             if (File.Exists(path))
@@ -87,7 +84,6 @@ namespace RPG.Classes
             }
             else
             {
-                Console.WriteLine("File not found. Press any key to return to the start menu.");
                 Console.ReadKey();
                 return null;
             }

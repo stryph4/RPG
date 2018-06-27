@@ -20,8 +20,8 @@ namespace RPG.Classes
         /// <param name="enemy"></param>
         public static void NotEnoughMP(Combatant hero, Combatant enemy)
         {
-            Console.WriteLine("Not enough resource! Try again.");
-            Console.WriteLine("Press any key to continue.");
+            CombatMethods.combatLog.Insert(0, "Not enough resource! Try again.");
+            CombatMethods.combatLog.Insert(0, "Press any key to continue.");
             Console.ReadKey();
             //hero.HeroTurn(hero, enemy);
         }

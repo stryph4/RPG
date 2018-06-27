@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace RPG.Windows
 {
@@ -59,12 +60,31 @@ namespace RPG.Windows
         {
             hero_Health.Content = $"HP: {StoredCombatants.Hero.HP} / {StoredCombatants.Hero.MaxHP}";
             hero_MP.Content = $"MP: {StoredCombatants.Hero.MP} / {StoredCombatants.Hero.MaxMP}";
-            hero_Health.Content = $"HP: {StoredCombatants.Enemy.HP} / {StoredCombatants.Enemy.MaxHP}";
-            hero_MP.Content = $"MP: {StoredCombatants.Enemy.MP} / {StoredCombatants.Enemy.MaxMP}";
+            enemy_Health.Content = $"HP: {StoredCombatants.Enemy.HP} / {StoredCombatants.Enemy.MaxHP}";
+            enemy_MP.Content = $"MP: {StoredCombatants.Enemy.MP} / {StoredCombatants.Enemy.MaxMP}";
             hero_HP_Bar.Value = StoredCombatants.Hero.HP;
             hero_MP_Bar.Value = StoredCombatants.Hero.MP;
             enemy_HP_Bar.Value = StoredCombatants.Enemy.HP;
             enemy_MP_Bar.Value = StoredCombatants.Enemy.MP;
+            enemy_Health.Content = $"HP: {StoredCombatants.Enemy.HP} / {StoredCombatants.Enemy.MaxHP}";
+            enemy_MP.Content = $"MP: {StoredCombatants.Enemy.MP} / {StoredCombatants.Enemy.MaxMP}";
+            if (hero_HP_Bar.Value < StoredCombatants.Hero.HP / 4)
+            {
+                hero_HP_Bar.Foreground = Brushes.Red;
+            }
+            if (hero_HP_Bar.Value <= StoredCombatants.Hero.HP / 2)
+            {
+                hero_HP_Bar.Foreground = Brushes.Yellow;
+            }
+
+            if (enemy_HP_Bar.Value <= StoredCombatants.Enemy.HP / 4)
+            {
+                enemy_HP_Bar.Foreground = Brushes.Red;
+            }
+            if (enemy_HP_Bar.Value <= StoredCombatants.Enemy.HP / 2)
+            {
+                enemy_HP_Bar.Foreground = Brushes.Yellow;
+            }
         }
 
         private void PrintCombatLog()
@@ -73,6 +93,7 @@ namespace RPG.Windows
             foreach (var item in CombatMethods.combatLog)
             {
                 CombatLog.Text += item;
+                CombatLog.Text += Environment.NewLine;
                 CombatLog.Text += Environment.NewLine;
             }
         }
@@ -92,6 +113,24 @@ namespace RPG.Windows
             CombatMethods.Attack(StoredCombatants.Hero, StoredCombatants.Enemy);
             UpdateHPAndMP();
             PrintCombatLog();
+
+            if (StoredCombatants.Enemy.HP <= 0)
+            {
+                CombatMethods.EndCombat(StoredCombatants.Hero, StoredCombatants.Enemy);
+                CharacterMenu characterMenu = new CharacterMenu(StoredCombatants.Hero);
+                characterMenu.Show();
+                Close();
+            }
+
+            StoredCombatants.Enemy.EnemyTurn(StoredCombatants.Hero, StoredCombatants.Enemy);
+            UpdateHPAndMP();
+            PrintCombatLog();
+
+            if (StoredCombatants.Hero.HP <= 0)
+            {
+                CombatMethods.GameOver();
+            }
+
         }
 
         private void Item_Button_Click(object sender, RoutedEventArgs e)

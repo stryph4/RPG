@@ -16,6 +16,8 @@ namespace RPG.Classes
         public static bool PaladinSelected { get; set; }
         public static string Name { get; set; }
 
+        public static bool CharacterCreated = false;
+
         public static Combatant CreateCharacter()
         {
 

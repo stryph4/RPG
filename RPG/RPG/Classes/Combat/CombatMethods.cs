@@ -15,7 +15,7 @@ namespace RPG.Classes
         public static bool inCombat = true;
         public static List<string> combatLog = new List<string>();
 
-        public static double CalculateSpellDamage(Combatant attacker, Combatant defender)
+        public static double SpellAttack(Combatant attacker, Combatant defender, KeyValuePair<string, string> spell)
         {
             Random random = new Random();
             double damage = (attacker.SpellPower - defender.MagicDefense) * (random.NextDouble() + .1);
@@ -25,7 +25,18 @@ namespace RPG.Classes
             }
             return damage;
         }
-        public static double CalculateAttackDamage(Combatant attacker, Combatant defender)
+
+        public static double SkillAttack(Combatant attacker, Combatant defender, KeyValuePair<string, string> spell)
+        {
+            Random random = new Random();
+            double damage = (attacker.SpellPower - defender.MagicDefense) * (random.NextDouble() + .1);
+            if (damage < 0)
+            {
+                damage = 1;
+            }
+            return damage;
+        }
+        public static void Attack(Combatant attacker, Combatant defender)
         {
             Random random = new Random();
             double damage = (attacker.AttackPower - defender.Defense) * (random.NextDouble() + .1);
@@ -33,8 +44,33 @@ namespace RPG.Classes
             {
                 damage = 1;
             }
+            double dodge = CalculateDodgeAndCrit();
+            double crit = CalculateDodgeAndCrit();
+            if (dodge <= defender.DodgeRate)
+            {
+                combatLog.Insert(0, $"{defender.Name} dodges {attacker.Name}'s attack!");
+            }
+            else if (crit <= attacker.CriticalHitRate)
+            {
+                damage *= 2;
+                damage = (AbsorbCalculator(defender, (int)damage));
+                combatLog.Insert(0, $"{attacker.Name} hits {defender.Name} for {(int)damage} damage. (CRITICAL!)");
+            }
+            else
+            {
+                damage = (AbsorbCalculator(defender, (int)damage));
+                combatLog.Insert(0, $"{attacker.Name} hits {defender.Name} for {(int)damage} damage.");
+            }
+
+            defender.HP -= (int)damage;
+
             RestoreRage(attacker, damage);
-            return damage;
+
+            if (attacker.ClassType == "Paladin")
+            {
+                    double tempAbsorb = damage * .2;
+                    attacker.AbsorbAmount += (int)tempAbsorb;
+            }
         }
 
         public static void RestoreRage(Combatant attacker, double damage)
@@ -56,7 +92,7 @@ namespace RPG.Classes
             return rng;
         }
 
-        private void PaladinTurn(Combatant hero)
+        public static void GenerateShield(Combatant hero)
         {
             double tempAbsorb = (double)hero.MaxHP * .02;
             hero.AbsorbAmount += (int)tempAbsorb;
@@ -102,6 +138,12 @@ namespace RPG.Classes
             return;
         }
 
+        public static void GameOver()
+        {
+            MessageBox.Show("You have died. Game Over.");
+            Application.Current.Shutdown();
+        }
+
         public static int AbsorbCalculator(Combatant combatant, int damage)
         {
             int tempDamage = (int)damage;
@@ -116,7 +158,7 @@ namespace RPG.Classes
             }
             if (combatant.AbsorbAmount > 0 && tempDamage - damage > 0)
             {
-                combatLog.Insert(0, $"{tempDamage - damage} damage was absorbed.");
+                combatLog.Insert(0, $"{tempDamage - damage} damage was absorbed by {combatant.Name}.");
             }
             combatant.AbsorbAmount -= tempDamage;
             if (combatant.AbsorbAmount < 0)
@@ -125,14 +167,6 @@ namespace RPG.Classes
             }
 
             return damage;
-        }
-
-        public static void Attack(Combatant attacker, Combatant defender)
-        {
-            double damage = CalculateAttackDamage(attacker, defender);
-            damage = AbsorbCalculator(defender, (int)damage);
-            combatLog.Insert(0, $"{attacker.Name}'s attack hits {defender.Name} for {(int)damage} damage.");
-            defender.HP -= (int)damage;
         }
     }
 }

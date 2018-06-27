@@ -13,7 +13,7 @@ namespace RPG.Classes
         {
             if (Buffs.berserk == false)
             {
-                Console.WriteLine("Berserker enabled, casting this spell again will disable the effect.");
+                CombatMethods.combatLog.Insert(0, "Berserker enabled, casting this spell again will disable the effect.");
                 Buffs.berserk = true;
                 hero.BaseAttackPower = hero.AttackPower;
                 hero.AttackPower += hero.AttackPower * .1;
@@ -23,7 +23,7 @@ namespace RPG.Classes
 
             else
             {
-                Console.WriteLine("Berserker disabled.");
+                CombatMethods.combatLog.Insert(0, "Berserker disabled.");
                 Buffs.berserk = false;
                 hero.AttackPower = hero.BaseAttackPower;
                 hero.Defense = hero.BaseDefense;

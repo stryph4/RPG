@@ -16,11 +16,11 @@ namespace RPG.Classes
             {
                 healAmount *= 2;
                 hero.HP += (int)healAmount;
-                Console.WriteLine($"Your Heal restored {healAmount} HP (CRITICAL).");
+                CombatMethods.combatLog.Insert(0, $"Your Heal restored {healAmount} HP (CRITICAL).");
             }
             else
             {
-                Console.WriteLine($"Your Heal restored {healAmount} HP.");
+                CombatMethods.combatLog.Insert(0, $"Your Heal restored {healAmount} HP.");
                 hero.HP += (int)healAmount;
             }
             if (hero.HP > hero.MaxHP)

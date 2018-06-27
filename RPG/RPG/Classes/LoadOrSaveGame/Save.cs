@@ -14,7 +14,6 @@ namespace RPG.Classes
         public static void SaveGame(Combatant hero)
         {
 
-            Console.Write("Enter a name for your save file: ");
             Directory.CreateDirectory(dir);
 
 
@@ -41,7 +40,6 @@ namespace RPG.Classes
                 sw.Write($"{entry.Key}|{entry.Value}|");
             }
 
-            Console.WriteLine("Game Saved.");
             sw.Close();
             Console.ReadKey();
             return;

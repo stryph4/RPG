@@ -35,7 +35,8 @@ namespace RPG.Windows
             {
                 
                     ForestExplore forestExplore = new ForestExplore(StoredCombatants.Hero);
-                    forestExplore.ShowDialog();
+                    forestExplore.Show();
+                    Close();
 
 
             }
@@ -43,6 +44,8 @@ namespace RPG.Windows
 
         private void Cancel_Button_Clicked(object sender, RoutedEventArgs e)
         {
+            CharacterMenu characterMenu = new CharacterMenu(StoredCombatants.Hero);
+            characterMenu.Show();
             Close();
         }
     }

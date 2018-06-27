@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using RPG.Classes;
+using System.Threading;
 
 namespace RPG.Classes
 {
@@ -127,6 +128,7 @@ namespace RPG.Classes
         /// </summary>
         public double BaseCritChance { get; set; }
 
+
         /// <summary>
         /// The chance for your combatant to dodge an attack
         /// </summary>
@@ -158,7 +160,17 @@ namespace RPG.Classes
             SkillPoints = 0;
 
         }
+
+        public void EnemyTurn(Combatant hero, Combatant enemy)
+        {
+            Random random = new Random();
+            CombatMethods.Attack(StoredCombatants.Enemy, StoredCombatants.Hero);
+
+        }
+
     }
+
 }
+
 
 
